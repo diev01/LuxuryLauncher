@@ -1,0 +1,63 @@
+# Luxury Launcher — Informational Repository Git Ignore
+# Safeguard: Prevent accidental commits of code, binaries, or credentials
+
+# Node & Frontend dependencies/builds
+node_modules/
+dist/
+dist-package/
+build/
+.next/
+out/
+
+# Rust & Tauri builds
+target/
+src-tauri/target/
+
+# Java & Gradle builds
+.gradle/
+build/
+bin/
+*.class
+
+# Binaries & Executables
+*.exe
+*.dll
+*.so
+*.dylib
+*.jar
+*.msi
+*.zip
+*.tar
+*.gz
+
+# Secrets, Environment & Credentials
+.env
+.env.*
+*.env
+*secret*
+*credential*
+*token*
+*session*
+*.pem
+*.key
+*.p12
+
+# Source code safeguard (this repo is documentation-only)
+*.rs
+*.ts
+*.tsx
+*.jsx
+*.java
+*.gradle
+
+# IDE & OS specific files
+.idea/
+.vscode/
+*.suo
+*.user
+*.userosv
+*.sln.docstates
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log

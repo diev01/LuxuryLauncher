@@ -64,7 +64,7 @@ The desktop client is developed with a modern, lightweight native desktop stack:
 The following features are implemented and functioning in the current build (`4.8.0`):
 
 - **Modern Desktop Interface:** Responsive cosmic dark-space UI with custom cyan highlights, stylized title bar, and native Windows 11 window controls (Minimize, Maximize/Restore, Close).
-- **User Profile Management:** Local profile selector with secure local state management and safe offline/guest representation.
+- **Visual Guest Profile ("Sin conexión"):** Clean visual representation of an unauthenticated state displaying the classic Steve avatar and "Sin conexión" indicator. **This profile is strictly cosmetic and does not permit launching Minecraft Java Edition or accessing multiplayer servers.**
 - **Client File Installation System:** Automated file extraction, cryptographic SHA-1 verification of official assets and libraries, and deployment to a structured installation path (`%APPDATA%\Launcheres\Clientes\LuxuryClient\`).
 - **Fabric Integration:** Seamless integration with Fabric Loader `0.19.5` and Fabric API `0.141.6+1.21.11`.
 - **Launcher & JVM Settings:** User-configurable RAM allocation limits (minimum/maximum memory), JVM garbage collection tuning flags (`-XX:+UseG1GC`), and custom resolution options.
@@ -85,12 +85,14 @@ For full details on feature progress, see [ROADMAP.md](ROADMAP.md).
 | :--- | :--- | :---: |
 | **Tauri 2 + Rust Core Architecture** | Desktop Core | 🟢 Completed |
 | **Modern React + Cyan Visual Design** | Frontend UI | 🟢 Completed |
+| **Visual Guest Profile (Steve / "Sin conexión")** | User Profile | 🟢 Completed |
 | **Minecraft 1.21.11 & Fabric Setup** | Runtime Integration | 🟢 Completed |
 | **Windows Bootstrapper Utility** | Installation | 🟢 Completed |
 | **TCP Community Server Monitor** | Network | 🟢 Completed |
 | **Microsoft Account Authentication** | Authentication | 🟡 In Development |
 | **Minecraft Services Integration** | Services | 🟡 In Development |
 | **Minecraft Java Ownership Verification** | Security & Compliance | 🟡 In Development |
+| **Authenticated Game Launching** | Core Gameplay | 🟡 In Development |
 | **Improved Launcher Performance & Memory** | Optimization | 🟡 In Development |
 | **Launcher Updates & Delivery System** | Distribution | 🟡 In Development |
 | **User Experience Improvements** | UI / UX | 🟡 In Development |
@@ -112,8 +114,9 @@ Luxury Launcher is actively implementing standard, official authentication mecha
 ### Compliance Notice & Status
 
 - **Application ID Review Status:** The integration with Minecraft Services is currently **in development** and pending official **Application ID approval** from Minecraft Services.
-- **No Premature Claims:** Microsoft authentication is not claimed to be fully active in production until the Application ID receives final approval. In the meantime, local and guest profiles are utilized for internal development testing.
-- **Ownership Verification:** Once approved, the launcher will enforce game ownership verification via the official `/entitlements/mcstore` endpoint. Only users with an authentic, purchased Minecraft Java Edition license will be able to launch the game.
+- **No Premature Claims:** Neither Microsoft authentication nor game launching are marked as completed. They remain in active development until the Application ID receives final approval.
+- **Strict Launch Restrictions:** The Guest Profile ("Sin conexión") is exclusively a visual, offline preview and **cannot launch Minecraft or connect to multiplayer servers**. Launching the game is conditionally locked behind official Microsoft authentication.
+- **Mandatory Ownership Verification:** Once approved, the launcher will enforce game ownership verification via the official `/entitlements/mcstore` endpoint. Only authenticated users with an authentic, purchased Minecraft Java Edition license will be permitted to launch the game.
 - **Security & Privacy:** Authentication strictly follows Microsoft Identity Platform guidelines. Tokens are stored locally on the user's machine; no credentials or tokens are ever collected, proxied, or transmitted to any third-party service.
 
 ---

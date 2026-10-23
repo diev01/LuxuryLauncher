@@ -22,11 +22,12 @@ Luxury Launcher is developed as a non-commercial, custom Minecraft Java Edition 
 
 | Feature | Status | Notes |
 | :--- | :---: | :--- |
-| **Local Profile & Guest Mode** | 🟢 Completed | Initial guest profile with offline state indicator and no mock data. |
-| **Microsoft OAuth 2.0 Device Code Flow** | 🟡 In Development | OAuth flow implemented; awaiting Minecraft Services Application ID review. |
+| **Visual Guest Profile ("Sin conexión")** | 🟢 Completed | Clean UI state with Steve avatar and "Sin conexión" indicator. Exclusively visual; **strictly prohibited from launching Minecraft or joining servers**. |
+| **Microsoft OAuth 2.0 Device Code Flow** | 🟡 In Development | OAuth flow implemented; awaiting official Minecraft Services Application ID review. |
 | **Xbox Live & XSTS Token Flow** | 🟡 In Development | Token exchange pipeline ready for live endpoint verification. |
 | **Minecraft Services Integration** | 🟡 In Development | Pending Application ID approval from Microsoft / Minecraft Services. |
-| **Minecraft Java Ownership Verification** | 🟡 In Development | Entitlement validation (`/entitlements/mcstore`) to enforce game license requirements. |
+| **Minecraft Java Ownership Verification** | 🟡 In Development | Entitlement validation (`/entitlements/mcstore`) to enforce game license requirements before game launch. |
+| **Authenticated Game Launching** | 🟡 In Development | Launching is strictly gated behind verified Microsoft authentication and license checks; cannot be used until App ID approval is granted. |
 | **Multi-Account Switching** | 🔵 Planned | Safe profile switching between authorized Microsoft accounts. |
 
 ---

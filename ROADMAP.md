@@ -12,6 +12,7 @@ LUXURY Launcher is developed as a non-commercial, custom Minecraft Java Edition 
 | :---: | :--- |
 | 🟢 **Completed** | Feature is implemented and verified in the current build (`4.8.0`). |
 | 🟡 **In Development** | Feature is actively being developed, integrated, or awaiting external review/evaluation. |
+| ⚪ **Not Yet Submitted** | The formal review application has not yet been submitted to Minecraft Services. |
 | 🔵 **Planned** | Feature is scheduled for future milestones. |
 
 ---
@@ -23,7 +24,7 @@ LUXURY Launcher is developed as a non-commercial, custom Minecraft Java Edition 
 | Feature | Status | Notes |
 | :--- | :---: | :--- |
 | **Local Guest Profile UI** | 🟢 Completed | Displays a local placeholder profile with a default Steve avatar and offline status indicator. This feature does not represent an authenticated Minecraft account. |
-| **Application ID Review Submission** | 🟡 In Development | Status: **Not Yet Submitted**. The application form is currently being prepared for upcoming submission to Minecraft Services. |
+| **Application ID Review** | ⚪ Not Yet Submitted | Status: **Not Yet Submitted**. The official application form for Minecraft Services review has not yet been submitted; this repository is being prepared to serve as the informational reference for that upcoming submission. |
 | **Microsoft OAuth 2.0 (Device Code Flow)** | 🟡 In Development | Partially implemented; device code request and polling logic implemented, subject to future Application ID submission and review. |
 | **Xbox Live & XSTS Token Flow** | 🟡 In Development | Token acquisition pipeline integrated; pending live verification with Minecraft Services. |
 | **Minecraft Services Integration** | 🟡 In Development | Currently returns HTTP 403 (*Invalid app registration*). Official approval is subject to evaluation and is not guaranteed. |
@@ -76,4 +77,4 @@ As part of the roadmap toward completing Microsoft Authentication and Minecraft 
 
 1. **Official Microsoft Identity**: The launcher implements standard Microsoft OAuth 2.0 mechanisms rather than scraping or insecure credential entry.
 2. **Game Ownership Mandate**: Players must possess an official, valid Minecraft Java Edition license. The launcher does not bypass license validation.
-3. **Privacy First**: No telemetry, analytics, personal credentials, or session tokens are collected or transmitted to external servers. All authentication tokens remain stored securely on the local machine.
+3. **Privacy & Token Handling**: Authentication tokens are handled locally by the launcher and transmitted only to the official Microsoft, Xbox Live, and Minecraft Services endpoints required for authentication. LUXURY Launcher does not operate an independent authentication server or intentionally transmit user credentials or tokens to unrelated third-party services.

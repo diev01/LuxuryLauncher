@@ -89,7 +89,7 @@ For full details on feature progress, see [ROADMAP.md](ROADMAP.md).
 | **Minecraft 1.21.11 & Fabric Setup** | Runtime Integration | 🟢 Completed |
 | **Windows Bootstrapper Utility** | Installation | 🟢 Completed |
 | **TCP Community Server Monitor** | Network | 🟢 Completed |
-| **Application ID Review Submission** | Services & Compliance | 🟡 In Development (Not Yet Submitted) |
+| **Application ID Review** | Services & Compliance | ⚪ Not Yet Submitted |
 | **Microsoft OAuth 2.0 (Device Code Flow)** | Authentication | 🟡 In Development |
 | **Minecraft Services Integration** | Services | 🟡 In Development |
 | **Minecraft Java Ownership Verification** | Security & Compliance | 🟡 In Development |
@@ -113,10 +113,10 @@ LUXURY Launcher is actively developing official authentication to ensure complia
 - **Microsoft OAuth 2.0 (Device Code Flow):** Partially implemented. The client requests device authorization codes from `https://login.microsoftonline.com/consumers/oauth2/v2.0/devicecode` and handles polling routines.
 - **Xbox Live & XSTS Integration:** The token exchange pipeline for Xbox Live user tokens and XSTS security tokens (`rp://api.minecraftservices.com/`) is integrated.
 - **Minecraft Services Status (HTTP 403):** Calls to Minecraft Services (`api.minecraftservices.com/authentication/login_with_xbox`) currently return **HTTP 403 Forbidden** (*Invalid app registration*), which is standard behavior for unregistered or unapproved third-party Application IDs.
-- **Application ID Review Status:** **Not Yet Submitted**. The official application form for Minecraft Services review has not yet been submitted; this repository is being prepared to serve as the informational reference for that upcoming submission.
+- **Application ID Review:** **Not Yet Submitted**. The official application form for Minecraft Services review has not yet been submitted; this repository is being prepared to serve as the informational reference for that upcoming submission.
 - **Full Authentication Availability:** Complete Microsoft Java Edition authentication is **not currently available** in the public build. Application ID approval is subject to official evaluation by Microsoft / Mojang and is not guaranteed.
 - **Game Ownership Verification:** Verification of legitimate game licenses (via `/entitlements/mcstore`) is implemented structurally in the pipeline, but remains **pending live end-to-end validation** if and when Application ID approval is granted.
-- **Security & Privacy:** Authentication strictly adheres to the Microsoft Identity Platform guidelines. All tokens remain stored locally on the user's machine; no credentials or tokens are ever proxied, collected, or transmitted to external servers.
+- **Security & Privacy:** Authentication strictly adheres to Microsoft Identity Platform guidelines. Authentication tokens are handled locally by the launcher and transmitted only to the official Microsoft, Xbox Live, and Minecraft Services endpoints required for authentication. LUXURY Launcher does not operate an independent authentication server or intentionally transmit user credentials or tokens to unrelated third-party services.
 
 ---
 

@@ -26,7 +26,7 @@
 It is an independent software project, currently in active development, created to deliver a tailored Minecraft experience powered by the Fabric mod loader. LUXURY Launcher focuses on clean desktop performance, an intuitive cosmic-inspired aesthetic, and straightforward client management for friends and private community members.
 
 > [!NOTE]
-> This repository is exclusively informational and serves as the official landing page and project reference for the Minecraft Services Application ID review. Source code is maintained privately and is not distributed as an open-source project.
+> This repository is exclusively informational and serves as the official landing page and project reference for the upcoming Minecraft Services Application ID review. Source code is maintained privately and is not distributed as an open-source project.
 
 ---
 
@@ -89,6 +89,7 @@ For full details on feature progress, see [ROADMAP.md](ROADMAP.md).
 | **Minecraft 1.21.11 & Fabric Setup** | Runtime Integration | 🟢 Completed |
 | **Windows Bootstrapper Utility** | Installation | 🟢 Completed |
 | **TCP Community Server Monitor** | Network | 🟢 Completed |
+| **Application ID Review Submission** | Services & Compliance | 🟡 In Development (Not Yet Submitted) |
 | **Microsoft OAuth 2.0 (Device Code Flow)** | Authentication | 🟡 In Development |
 | **Minecraft Services Integration** | Services | 🟡 In Development |
 | **Minecraft Java Ownership Verification** | Security & Compliance | 🟡 In Development |
@@ -109,12 +110,12 @@ LUXURY Launcher is actively developing official authentication to ensure complia
 
 ### Current Implementation State
 
-- **Microsoft OAuth 2.0 (Device Code Flow):** Partially implemented. The client successfully requests device authorization codes from `https://login.microsoftonline.com/consumers/oauth2/v2.0/devicecode` and handles polling routines.
+- **Microsoft OAuth 2.0 (Device Code Flow):** Partially implemented. The client requests device authorization codes from `https://login.microsoftonline.com/consumers/oauth2/v2.0/devicecode` and handles polling routines.
 - **Xbox Live & XSTS Integration:** The token exchange pipeline for Xbox Live user tokens and XSTS security tokens (`rp://api.minecraftservices.com/`) is integrated.
-- **Minecraft Services Status (HTTP 403):** Minecraft Services (`api.minecraftservices.com/authentication/login_with_xbox`) currently returns **HTTP 403 Forbidden** (*Invalid app registration*). This response is expected while the Application ID is pending official allowlisting and approval.
-- **Application ID Review:** Official approval of the Application ID is currently **pending review** with Minecraft Services.
-- **Full Authentication Availability:** Complete Microsoft Java Edition authentication is **not yet available** in the public build while approval is pending.
-- **Game Ownership Verification:** Verification of legitimate game licenses (via `/entitlements/mcstore`) is implemented structurally in the pipeline, but remains **pending live end-to-end validation** until the Application ID is approved.
+- **Minecraft Services Status (HTTP 403):** Calls to Minecraft Services (`api.minecraftservices.com/authentication/login_with_xbox`) currently return **HTTP 403 Forbidden** (*Invalid app registration*), which is standard behavior for unregistered or unapproved third-party Application IDs.
+- **Application ID Review Status:** **Not Yet Submitted**. The official application form for Minecraft Services review has not yet been submitted; this repository is being prepared to serve as the informational reference for that upcoming submission.
+- **Full Authentication Availability:** Complete Microsoft Java Edition authentication is **not currently available** in the public build. Application ID approval is subject to official evaluation by Microsoft / Mojang and is not guaranteed.
+- **Game Ownership Verification:** Verification of legitimate game licenses (via `/entitlements/mcstore`) is implemented structurally in the pipeline, but remains **pending live end-to-end validation** if and when Application ID approval is granted.
 - **Security & Privacy:** Authentication strictly adheres to the Microsoft Identity Platform guidelines. All tokens remain stored locally on the user's machine; no credentials or tokens are ever proxied, collected, or transmitted to external servers.
 
 ---

@@ -11,7 +11,7 @@ LUXURY Launcher is developed as a non-commercial, custom Minecraft Java Edition 
 | Status | Meaning |
 | :---: | :--- |
 | 🟢 **Completed** | Feature is implemented and verified in the current build (`4.8.0`). |
-| 🟡 **In Development** | Feature is actively being developed, integrated, or awaiting external approvals. |
+| 🟡 **In Development** | Feature is actively being developed, integrated, or awaiting external review/evaluation. |
 | 🔵 **Planned** | Feature is scheduled for future milestones. |
 
 ---
@@ -23,11 +23,12 @@ LUXURY Launcher is developed as a non-commercial, custom Minecraft Java Edition 
 | Feature | Status | Notes |
 | :--- | :---: | :--- |
 | **Local Guest Profile UI** | 🟢 Completed | Displays a local placeholder profile with a default Steve avatar and offline status indicator. This feature does not represent an authenticated Minecraft account. |
-| **Microsoft OAuth 2.0 (Device Code Flow)** | 🟡 In Development | Partially implemented; device code request and polling logic implemented, awaiting Minecraft Services Application ID approval. |
+| **Application ID Review Submission** | 🟡 In Development | Status: **Not Yet Submitted**. The application form is currently being prepared for upcoming submission to Minecraft Services. |
+| **Microsoft OAuth 2.0 (Device Code Flow)** | 🟡 In Development | Partially implemented; device code request and polling logic implemented, subject to future Application ID submission and review. |
 | **Xbox Live & XSTS Token Flow** | 🟡 In Development | Token acquisition pipeline integrated; pending live verification with Minecraft Services. |
-| **Minecraft Services Integration** | 🟡 In Development | Currently returns HTTP 403 (*Invalid app registration*) pending official Application ID approval. |
-| **Minecraft Java Ownership Verification** | 🟡 In Development | License verification logic (`/entitlements/mcstore`) prepared structurally; pending live end-to-end validation. |
-| **Full Authenticated Game Launch** | 🟡 In Development | Launching with full official Microsoft authentication is unavailable until Application ID approval is granted. |
+| **Minecraft Services Integration** | 🟡 In Development | Currently returns HTTP 403 (*Invalid app registration*). Official approval is subject to evaluation and is not guaranteed. |
+| **Minecraft Java Ownership Verification** | 🟡 In Development | License verification logic (`/entitlements/mcstore`) prepared structurally; pending live end-to-end validation if approved. |
+| **Full Authenticated Game Launch** | 🟡 In Development | Launching with full official Microsoft authentication is not available while Application ID review is pending submission and evaluation. |
 | **Multi-Account Switching** | 🔵 Planned | Safe profile switching between authorized Microsoft accounts. |
 
 ---

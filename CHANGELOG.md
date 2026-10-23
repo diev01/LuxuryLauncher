@@ -24,7 +24,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - **Microsoft Authentication Pipeline (Staged):**
   - Microsoft OAuth 2.0 Device Code Flow client implementation.
   - Integration with Xbox Live and XSTS token exchange routines.
-  - Minecraft Services API integration staged (currently returns HTTP 403 pending official Application ID approval).
+  - Minecraft Services API integration staged (currently returns HTTP 403; Application ID review status: Not Yet Submitted).
 - **Windows Bootstrapper & Distribution:**
   - Automated desktop installer/bootstrapper utility for Windows 10/11 environments (`luxury-bootstrapper.exe`).
   - Desktop shortcut creation with official crystal feather iconography.

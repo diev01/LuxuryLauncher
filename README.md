@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="assets/luxury-logo.png" alt="Luxury Launcher Logo" width="130" />
+  <img src="assets/luxury-logo.png" alt="LUXURY Launcher Logo" width="130" />
 </p>
 
-<h1 align="center">Luxury Launcher</h1>
+<h1 align="center">LUXURY Launcher</h1>
 
 <p align="center">
   <strong>A modern, custom Minecraft Java Edition launcher designed for a private community.</strong>
@@ -21,31 +21,31 @@
 
 ## Overview
 
-**Luxury Launcher** is a custom Minecraft Java Edition launcher for Windows, designed to provide a modern and streamlined experience for a private community of approximately 50 players.
+**LUXURY Launcher** is a custom Minecraft Java Edition launcher for Windows, designed to provide a modern and streamlined experience for a private community of approximately 50 players.
 
-It is an independent software project, currently in active development, created to deliver a tailored Minecraft experience powered by the Fabric mod loader. Luxury Launcher focuses on clean desktop performance, an intuitive cosmic-inspired aesthetic, and straightforward client management for friends and private community members.
+It is an independent software project, currently in active development, created to deliver a tailored Minecraft experience powered by the Fabric mod loader. LUXURY Launcher focuses on clean desktop performance, an intuitive cosmic-inspired aesthetic, and straightforward client management for friends and private community members.
 
 > [!NOTE]
-> This repository is exclusively informational and serves as the official landing page and project reference. Source code is maintained privately and is not distributed as an open-source project.
+> This repository is exclusively informational and serves as the official landing page and project reference for the Minecraft Services Application ID review. Source code is maintained privately and is not distributed as an open-source project.
 
 ---
 
 ## About the Project
 
-Luxury Launcher was built to simplify how our private community connects, launches, and enjoys Minecraft Java Edition with Fabric optimizations.
+LUXURY Launcher was built to simplify how our private community connects, launches, and enjoys Minecraft Java Edition with Fabric optimizations.
 
 Key highlights include:
 - **Dedicated Java Launcher:** Tailored specifically for Minecraft Java Edition.
 - **Modern Dark & Cyan Interface:** Clean dark aesthetic with glassmorphic cards and vibrant cyan accents.
 - **Fabric Mod Loader Integration:** Direct orchestration of Fabric Loader and runtime configurations for Minecraft Java 1.21.11.
 - **Client File Installation & Management:** Automated deployment and integrity verification of game instances and libraries.
-- **Tailored for Private Use:** Crafted exclusively for an invitation-only group of around 50 players, rather than broad public commercial release.
+- **Tailored for Private Use:** Crafted exclusively for an invitation-only group of approximately 50 players, rather than broad public commercial release.
 
 ---
 
 ## Technologies Used
 
-The desktop client is developed with a modern, lightweight native desktop stack:
+The desktop client is developed with a modern native desktop stack:
 
 | Component | Technology | Role |
 | :--- | :--- | :--- |
@@ -63,10 +63,10 @@ The desktop client is developed with a modern, lightweight native desktop stack:
 
 The following features are implemented and functioning in the current build (`4.8.0`):
 
-- **Modern Desktop Interface:** Responsive cosmic dark-space UI with custom cyan highlights, stylized title bar, and native Windows 11 window controls (Minimize, Maximize/Restore, Close).
-- **Visual Guest Profile ("Sin conexión"):** Clean visual representation of an unauthenticated state displaying the classic Steve avatar and "Sin conexión" indicator. **This profile is strictly cosmetic and does not permit launching Minecraft Java Edition or accessing multiplayer servers.**
+- **Modern Desktop Interface:** Responsive cosmic dark-space UI with custom cyan highlights, stylized title bar, and native Windows window controls (Minimize, Maximize/Restore, Close).
+- **Local Guest Profile UI:** Displays a local placeholder profile with a default Steve avatar and offline status indicator. This feature does not represent an authenticated Minecraft account.
 - **Client File Installation System:** Automated file extraction, cryptographic SHA-1 verification of official assets and libraries, and deployment to a structured installation path (`%APPDATA%\Launcheres\Clientes\LuxuryClient\`).
-- **Fabric Integration:** Seamless integration with Fabric Loader `0.19.5` and Fabric API `0.141.6+1.21.11`.
+- **Fabric Integration:** Integration with Fabric Loader `0.19.5` and Fabric API `0.141.6+1.21.11`.
 - **Launcher & JVM Settings:** User-configurable RAM allocation limits (minimum/maximum memory), JVM garbage collection tuning flags (`-XX:+UseG1GC`), and custom resolution options.
 - **Windows Installer / Bootstrapper:** Dedicated lightweight Windows installer utility (`luxury-bootstrapper.exe`) that configures the client directory and generates official desktop shortcuts.
 - **Community Server Monitoring:** Real-time TCP ping utility providing live reachability and latency metrics for community servers.
@@ -85,46 +85,44 @@ For full details on feature progress, see [ROADMAP.md](ROADMAP.md).
 | :--- | :--- | :---: |
 | **Tauri 2 + Rust Core Architecture** | Desktop Core | 🟢 Completed |
 | **Modern React + Cyan Visual Design** | Frontend UI | 🟢 Completed |
-| **Visual Guest Profile (Steve / "Sin conexión")** | User Profile | 🟢 Completed |
+| **Local Guest Profile UI** | User Interface | 🟢 Completed |
 | **Minecraft 1.21.11 & Fabric Setup** | Runtime Integration | 🟢 Completed |
 | **Windows Bootstrapper Utility** | Installation | 🟢 Completed |
 | **TCP Community Server Monitor** | Network | 🟢 Completed |
-| **Microsoft Account Authentication** | Authentication | 🟡 In Development |
+| **Microsoft OAuth 2.0 (Device Code Flow)** | Authentication | 🟡 In Development |
 | **Minecraft Services Integration** | Services | 🟡 In Development |
 | **Minecraft Java Ownership Verification** | Security & Compliance | 🟡 In Development |
-| **Authenticated Game Launching** | Core Gameplay | 🟡 In Development |
-| **Improved Launcher Performance & Memory** | Optimization | 🟡 In Development |
-| **Launcher Updates & Delivery System** | Distribution | 🟡 In Development |
+| **Full Authenticated Game Launch** | Core Gameplay | 🟡 In Development |
+| **Launcher Performance & Footprint Optimization** | Optimization | 🟡 In Development |
+| **Launcher Update Delivery Pipeline** | Distribution | 🟡 In Development |
 | **User Experience Improvements** | UI / UX | 🟡 In Development |
 | **Minecraft Instance Management Enhancements** | Game Management | 🟡 In Development |
-| **Bug Fixes and Stability Improvements** | Quality Assurance | 🟡 In Development |
+| **Bug Fixes and Stability Testing** | Quality Assurance | 🟡 In Development |
 | **Multi-Account Switching** | Authentication | 🔵 Planned |
 | **Automated Resource Pack Synchronizer** | Private Community | 🔵 Planned |
 
 ---
 
-## Microsoft Authentication & Minecraft Services
+## Microsoft Authentication & Minecraft Services Status
 
-Luxury Launcher is actively implementing standard, official authentication mechanisms using:
-- **Microsoft OAuth 2.0 (Device Code Flow)**
-- **Xbox Live Authentication**
-- **XSTS (Xbox Secure Token Service)**
-- **Minecraft Services API** (`api.minecraftservices.com`)
+LUXURY Launcher is actively developing official authentication to ensure compliance with Microsoft and Mojang standards.
 
-### Compliance Notice & Status
+### Current Implementation State
 
-- **Application ID Review Status:** The integration with Minecraft Services is currently **in development** and pending official **Application ID approval** from Minecraft Services.
-- **No Premature Claims:** Neither Microsoft authentication nor game launching are marked as completed. They remain in active development until the Application ID receives final approval.
-- **Strict Launch Restrictions:** The Guest Profile ("Sin conexión") is exclusively a visual, offline preview and **cannot launch Minecraft or connect to multiplayer servers**. Launching the game is conditionally locked behind official Microsoft authentication.
-- **Mandatory Ownership Verification:** Once approved, the launcher will enforce game ownership verification via the official `/entitlements/mcstore` endpoint. Only authenticated users with an authentic, purchased Minecraft Java Edition license will be permitted to launch the game.
-- **Security & Privacy:** Authentication strictly follows Microsoft Identity Platform guidelines. Tokens are stored locally on the user's machine; no credentials or tokens are ever collected, proxied, or transmitted to any third-party service.
+- **Microsoft OAuth 2.0 (Device Code Flow):** Partially implemented. The client successfully requests device authorization codes from `https://login.microsoftonline.com/consumers/oauth2/v2.0/devicecode` and handles polling routines.
+- **Xbox Live & XSTS Integration:** The token exchange pipeline for Xbox Live user tokens and XSTS security tokens (`rp://api.minecraftservices.com/`) is integrated.
+- **Minecraft Services Status (HTTP 403):** Minecraft Services (`api.minecraftservices.com/authentication/login_with_xbox`) currently returns **HTTP 403 Forbidden** (*Invalid app registration*). This response is expected while the Application ID is pending official allowlisting and approval.
+- **Application ID Review:** Official approval of the Application ID is currently **pending review** with Minecraft Services.
+- **Full Authentication Availability:** Complete Microsoft Java Edition authentication is **not yet available** in the public build while approval is pending.
+- **Game Ownership Verification:** Verification of legitimate game licenses (via `/entitlements/mcstore`) is implemented structurally in the pipeline, but remains **pending live end-to-end validation** until the Application ID is approved.
+- **Security & Privacy:** Authentication strictly adheres to the Microsoft Identity Platform guidelines. All tokens remain stored locally on the user's machine; no credentials or tokens are ever proxied, collected, or transmitted to external servers.
 
 ---
 
 ## Intended Audience
 
 - **Target Audience:** A closed, private community of approximately **50 players** (friends and community members).
-- **Non-Commercial Nature:** Luxury Launcher is not intended for commercial release, public mass distribution, sale, or subscription.
+- **Non-Commercial Nature:** LUXURY Launcher is not intended for commercial release, public mass distribution, sale, or subscription.
 - **No Monetization:** The launcher contains no paywalls, microtransactions, or paid access of any kind.
 
 ---
@@ -133,6 +131,7 @@ Luxury Launcher is actively implementing standard, official authentication mecha
 
 | Metric | Details |
 | :--- | :--- |
+| **Project Name** | LUXURY Launcher |
 | **Current Version** | `4.8.0` |
 | **Development Status** | Active Development |
 | **Operating System** | Windows 10 / Windows 11 (64-bit) |
@@ -147,8 +146,8 @@ Luxury Launcher is actively implementing standard, official authentication mecha
 
 ## Disclaimer
 
-**Luxury Launcher** is an independent, non-official project and is **not affiliated with, endorsed by, sponsored by, or approved by Mojang Studios, Microsoft Corporation, or any of their affiliates or subsidiaries**.
+**LUXURY Launcher** is an independent, non-official project and is **not affiliated with, endorsed by, sponsored by, or approved by Mojang Studios, Microsoft Corporation, or any of their affiliates or subsidiaries**.
 
 - **Minecraft** is a registered trademark of Mojang Synergies AB.
 - All trademarks, registered trademarks, product names, logos, and brands mentioned in this project are the property of their respective owners.
-- Luxury Launcher requires a legitimate copy of Minecraft Java Edition purchased from official channels.
+- LUXURY Launcher requires a legitimate copy of Minecraft Java Edition purchased from official channels.

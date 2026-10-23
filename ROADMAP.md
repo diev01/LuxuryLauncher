@@ -1,8 +1,8 @@
-# Development Roadmap — Luxury Launcher
+# Development Roadmap — LUXURY Launcher
 
-This document outlines the milestones, current development status, and planned roadmap for **Luxury Launcher**.
+This document outlines the milestones, current development status, and planned roadmap for **LUXURY Launcher**.
 
-Luxury Launcher is developed as a non-commercial, custom Minecraft Java Edition launcher for a private community of approximately 50 players.
+LUXURY Launcher is developed as a non-commercial, custom Minecraft Java Edition launcher for a private community of approximately 50 players.
 
 ---
 
@@ -22,12 +22,12 @@ Luxury Launcher is developed as a non-commercial, custom Minecraft Java Edition 
 
 | Feature | Status | Notes |
 | :--- | :---: | :--- |
-| **Visual Guest Profile ("Sin conexión")** | 🟢 Completed | Clean UI state with Steve avatar and "Sin conexión" indicator. Exclusively visual; **strictly prohibited from launching Minecraft or joining servers**. |
-| **Microsoft OAuth 2.0 Device Code Flow** | 🟡 In Development | OAuth flow implemented; awaiting official Minecraft Services Application ID review. |
-| **Xbox Live & XSTS Token Flow** | 🟡 In Development | Token exchange pipeline ready for live endpoint verification. |
-| **Minecraft Services Integration** | 🟡 In Development | Pending Application ID approval from Microsoft / Minecraft Services. |
-| **Minecraft Java Ownership Verification** | 🟡 In Development | Entitlement validation (`/entitlements/mcstore`) to enforce game license requirements before game launch. |
-| **Authenticated Game Launching** | 🟡 In Development | Launching is strictly gated behind verified Microsoft authentication and license checks; cannot be used until App ID approval is granted. |
+| **Local Guest Profile UI** | 🟢 Completed | Displays a local placeholder profile with a default Steve avatar and offline status indicator. This feature does not represent an authenticated Minecraft account. |
+| **Microsoft OAuth 2.0 (Device Code Flow)** | 🟡 In Development | Partially implemented; device code request and polling logic implemented, awaiting Minecraft Services Application ID approval. |
+| **Xbox Live & XSTS Token Flow** | 🟡 In Development | Token acquisition pipeline integrated; pending live verification with Minecraft Services. |
+| **Minecraft Services Integration** | 🟡 In Development | Currently returns HTTP 403 (*Invalid app registration*) pending official Application ID approval. |
+| **Minecraft Java Ownership Verification** | 🟡 In Development | License verification logic (`/entitlements/mcstore`) prepared structurally; pending live end-to-end validation. |
+| **Full Authenticated Game Launch** | 🟡 In Development | Launching with full official Microsoft authentication is unavailable until Application ID approval is granted. |
 | **Multi-Account Switching** | 🔵 Planned | Safe profile switching between authorized Microsoft accounts. |
 
 ---
@@ -39,9 +39,9 @@ Luxury Launcher is developed as a non-commercial, custom Minecraft Java Edition 
 | **Modern Desktop Shell** | 🟢 Completed | Built with Tauri 2, Rust, React 18, and Tailwind CSS. |
 | **Cosmic & Cyan UI Theme** | 🟢 Completed | Custom glassmorphism cards, cosmic background, and custom UI components. |
 | **Native Windows Title Bar Controls** | 🟢 Completed | Custom minimize, maximize/restore, and close buttons integrated with Tauri. |
-| **Windows Bootstrapper / Installer** | 🟢 Completed | Automatic directory setup and desktop shortcut configuration. |
-| **User Experience & Onboarding Improvements** | 🟡 In Development | Streamlined setup wizard and first-time configuration guidance. |
-| **Accessibility & Theme Tweaks** | 🔵 Planned | Contrast adjustments and customizable UI scaling. |
+| **Windows Bootstrapper / Installer** | 🟢 Completed | Automatic directory setup and desktop shortcut configuration (`luxury-bootstrapper.exe`). |
+| **User Experience Improvements** | 🟡 In Development | Ongoing refinement of setup guidance and client interface responsiveness. |
+| **Accessibility & Theme Customization** | 🔵 Planned | UI scaling options and enhanced contrast modes. |
 
 ---
 
@@ -51,10 +51,10 @@ Luxury Launcher is developed as a non-commercial, custom Minecraft Java Edition 
 | :--- | :---: | :--- |
 | **Minecraft Java 1.21.11 Target** | 🟢 Completed | Official version manifest parsing and asset integrity verification. |
 | **Fabric Loader & Fabric API Integration** | 🟢 Completed | Automatic Fabric Loader runtime resolution for Java 21 LTS. |
-| **JVM Memory & Argument Settings** | 🟢 Completed | User-configurable RAM allocation limits and optimized GC flags. |
+| **JVM Memory & Argument Settings** | 🟢 Completed | User-configurable RAM allocation limits and optimized GC flags (`-XX:+UseG1GC`). |
 | **TCP Community Server Monitor** | 🟢 Completed | Real-time TCP ping and latency display for community servers. |
-| **Minecraft Instance Management** | 🟡 In Development | Enhanced directory isolation and clean instance recovery. |
-| **Modpack & Resource Pack Synchronizer** | 🔵 Planned | Automated private community asset updates without manual file transfers. |
+| **Minecraft Instance Management Enhancements** | 🟡 In Development | Structured directory isolation and instance recovery routines. |
+| **Automated Resource Pack Synchronizer** | 🔵 Planned | Automated private community asset updates without manual file transfers. |
 
 ---
 
@@ -62,9 +62,9 @@ Luxury Launcher is developed as a non-commercial, custom Minecraft Java Edition 
 
 | Feature | Status | Notes |
 | :--- | :---: | :--- |
-| **Launcher Resource Footprint Optimization** | 🟡 In Development | Continuous profiling to maintain minimal memory and CPU usage on Windows. |
+| **Launcher Performance & Footprint Optimization** | 🟡 In Development | Ongoing profiling to minimize CPU and RAM footprint on Windows. |
 | **Launcher Update Delivery Pipeline** | 🟡 In Development | Staged updater infrastructure to deliver verified client releases safely. |
-| **Bug Fixes & Stability Improvements** | 🟡 In Development | Ongoing testing across Windows 10 and Windows 11 environments. |
+| **Bug Fixes and Stability Testing** | 🟡 In Development | Continuous testing across Windows 10 and Windows 11 environments. |
 | **Automated Crash Diagnostics** | 🔵 Planned | Safe client error reporting for launcher troubleshooting. |
 
 ---

@@ -116,7 +116,7 @@ LUXURY Launcher is actively developing official authentication to ensure complia
 - **Application ID Review:** **Not Yet Submitted**. The official application form for Minecraft Services review has not yet been submitted; this repository is being prepared to serve as the informational reference for that upcoming submission.
 - **Full Authentication Availability:** Complete Microsoft Java Edition authentication is **not currently available** in the public build. Application ID approval is subject to official evaluation by Microsoft / Mojang and is not guaranteed.
 - **Game Ownership Verification:** Verification of legitimate game licenses (via `/entitlements/mcstore`) is implemented structurally in the pipeline, but remains **pending live end-to-end validation** if and when Application ID approval is granted.
-- **Security & Privacy:** Authentication strictly adheres to Microsoft Identity Platform guidelines. Authentication tokens are handled locally by the launcher and transmitted only to the official Microsoft, Xbox Live, and Minecraft Services endpoints required for authentication. LUXURY Launcher does not operate an independent authentication server or intentionally transmit user credentials or tokens to unrelated third-party services.
+- **Security & Privacy:** LUXURY Launcher is being developed to follow Microsoft Identity Platform guidelines. Authentication tokens are handled locally and transmitted to the official Microsoft, Xbox Live, and Minecraft Services endpoints as required for authentication. LUXURY Launcher does not operate an independent authentication server or intentionally transmit user credentials or tokens to unrelated third-party services. Full authentication and security validation remain in progress.
 
 ---
 

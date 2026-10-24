@@ -77,4 +77,4 @@ As part of the roadmap toward completing Microsoft Authentication and Minecraft 
 
 1. **Official Microsoft Identity**: The launcher implements standard Microsoft OAuth 2.0 mechanisms rather than scraping or insecure credential entry.
 2. **Game Ownership Mandate**: Players must possess an official, valid Minecraft Java Edition license. The launcher does not bypass license validation.
-3. **Privacy & Token Handling**: Authentication tokens are handled locally by the launcher and transmitted only to the official Microsoft, Xbox Live, and Minecraft Services endpoints required for authentication. LUXURY Launcher does not operate an independent authentication server or intentionally transmit user credentials or tokens to unrelated third-party services.
+3. **Privacy & Token Handling**: Authentication tokens are handled locally and transmitted to the official Microsoft, Xbox Live, and Minecraft Services endpoints as required for authentication. LUXURY Launcher does not operate an independent authentication server or intentionally transmit user credentials or tokens to unrelated third-party services. Full authentication and security validation remain in progress.

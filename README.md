@@ -26,7 +26,7 @@
 It is an independent software project, currently in active development, created to deliver a tailored Minecraft experience powered by the Fabric mod loader. LUXURY Launcher focuses on clean desktop performance, an intuitive cosmic-inspired aesthetic, and straightforward client management for friends and private community members.
 
 > [!NOTE]
-> This repository is exclusively informational and serves as the official landing page and project reference for the upcoming Minecraft Services Application ID review. Source code is maintained privately and is not distributed as an open-source project.
+> This repository is exclusively informational and serves as the official landing page and project reference for the Minecraft Services Application ID review. The official Minecraft Services Application ID review form has been submitted. The application is currently awaiting evaluation by Microsoft/Mojang. Approval is not guaranteed. Source code is maintained privately and is not distributed as an open-source project.
 
 ---
 
@@ -64,7 +64,7 @@ The desktop client is developed with a modern native desktop stack:
 The following features are implemented and functioning in the current build (`4.8.0`):
 
 - **Modern Desktop Interface:** Responsive cosmic dark-space UI with custom cyan highlights, stylized title bar, and native Windows window controls (Minimize, Maximize/Restore, Close).
-- **Local Guest Profile UI:** Displays a local placeholder profile with a default Steve avatar and offline status indicator. This feature does not represent an authenticated Minecraft account and cannot be used to launch the game or connect to multiplayer servers.
+- **Local Guest Profile UI:** Displays a local placeholder profile with a default Steve avatar and offline status indicator. This feature does not represent an authenticated Minecraft account and cannot be used to launch the game or connect to multiplayer servers without an authenticated account and a valid license.
 - **Client File Installation System:** Automated file extraction, cryptographic SHA-1 verification of official assets and libraries, and deployment to a structured installation path (`%APPDATA%\Launcheres\Clientes\LuxuryClient\`).
 - **Fabric Integration:** Integration with Fabric Loader `0.19.5` and Fabric API `0.141.6+1.21.11`.
 - **Launcher & JVM Settings:** User-configurable RAM allocation limits (minimum/maximum memory), JVM garbage collection tuning flags (`-XX:+UseG1GC`), and custom resolution options.
@@ -89,7 +89,7 @@ For full details on feature progress, see [ROADMAP.md](ROADMAP.md).
 | **Minecraft 1.21.11 & Fabric Setup** | Runtime Integration | 🟢 Completed |
 | **Windows Bootstrapper Utility** | Installation | 🟢 Completed |
 | **TCP Community Server Monitor** | Network | 🟢 Completed |
-| **Application ID Review** | Services & Compliance | ⚪ Not Yet Submitted |
+| **Application ID Review** | Services & Compliance | ⚪ Submitted (Awaiting Review) |
 | **Microsoft OAuth 2.0 (Device Code Flow)** | Authentication | 🟡 In Development |
 | **Minecraft Services Integration** | Services | 🟡 In Development |
 | **Minecraft Java Ownership Verification** | Security & Compliance | 🟡 In Development |
@@ -110,13 +110,13 @@ LUXURY Launcher is actively developing official authentication to ensure complia
 
 ### Current Implementation State
 
-- **Microsoft OAuth 2.0 (Device Code Flow):** Partially implemented. The client requests device authorization codes from `https://login.microsoftonline.com/consumers/oauth2/v2.0/devicecode` and handles polling routines.
-- **Xbox Live & XSTS Integration:** The token exchange pipeline for Xbox Live user tokens and XSTS security tokens (`rp://api.minecraftservices.com/`) is integrated.
-- **Minecraft Services Status (HTTP 403):** Calls to Minecraft Services (`api.minecraftservices.com/authentication/login_with_xbox`) currently return **HTTP 403 Forbidden** (*Invalid app registration*), which is standard behavior for unregistered or unapproved third-party Application IDs.
-- **Application ID Review:** **Not Yet Submitted**. The official application form for Minecraft Services review has not yet been submitted; this repository is being prepared to serve as the informational reference for that upcoming submission.
-- **Full Authentication Availability:** Complete Microsoft Java Edition authentication is **not currently available** in the current development build. Application ID approval is subject to official evaluation by Microsoft / Mojang and is not guaranteed.
-- **Game Ownership Verification:** Verification of official game licenses (via `/entitlements/mcstore` and `/minecraft/profile`) is implemented in the client backend and strictly enforced in the pre-launch pipeline. Live end-to-end verification remains blocked by HTTP 403 until Application ID approval is granted.
-- **Pre-Launch Security Enforcements:** The launcher validates account data structures, verifies token expiration with automated OAuth refresh routines, and requires an authenticated Microsoft account with an active Minecraft Java Edition license before initiating the game. Local guest mode is strictly restricted to an offline visual state.
+- **Microsoft OAuth 2.0 (Device Code Flow):** Partially implemented and in active development. The client requests device authorization codes from `https://login.microsoftonline.com/consumers/oauth2/v2.0/devicecode` and handles polling routines. Complete end-to-end testing remains pending.
+- **Xbox Live & XSTS Integration:** Token exchange routines for Xbox Live user tokens and XSTS security tokens (`rp://api.minecraftservices.com/`) are implemented in backend code; end-to-end testing with live Minecraft Services remains pending.
+- **Minecraft Services Status (HTTP 403):** Minecraft Services currently returns HTTP 403 Forbidden ('Invalid app registration') when the launcher attempts to authenticate. An Application ID review has been submitted to request authorization. The exact resolution remains subject to Microsoft/Mojang's evaluation.
+- **Application ID Review — Submitted (Awaiting Review):** The official Minecraft Services Application ID review form has been submitted. The application is currently awaiting evaluation by Microsoft/Mojang. Approval is not guaranteed.
+- **Full Authentication Availability:** Complete Microsoft Java Edition authentication is **not currently available** in the current development build. The authentication pipeline remains in development, and full end-to-end testing of authentication, license verification, and game launch remains pending.
+- **Game Ownership Verification:** Verification of Minecraft Java Edition license ownership (via `/entitlements/mcstore` and `/minecraft/profile`) is implemented in the backend code based on current project architecture. Complete end-to-end testing of live license validation remains pending.
+- **Pre-Launch Security Enforcements:** The launcher backend enforces account structural validation, checks token expiration with automated OAuth refresh routines, and requires an authenticated Microsoft account with a valid Minecraft Java Edition license before permitting game launch. The cosmetic Guest profile displays an offline placeholder and does not allow launching Minecraft or accessing servers without an authenticated account and a valid license.
 - **Security & Privacy:** LUXURY Launcher is being developed to follow Microsoft Identity Platform guidelines. Authentication tokens are handled locally and transmitted to the official Microsoft, Xbox Live, and Minecraft Services endpoints as required for authentication. LUXURY Launcher does not operate an independent authentication server or intentionally transmit user credentials or tokens to unrelated third-party services. Full authentication and security validation remain in progress.
 
 ---

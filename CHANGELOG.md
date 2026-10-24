@@ -20,12 +20,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
   - Launcher settings for JVM memory allocation (minimum/maximum RAM limits) and custom execution arguments.
   - Centralized, structured installation target at `%APPDATA%\Launcheres\Clientes\LuxuryClient\`.
 - **User Interface & Profile Display:**
-  - Local Guest Profile UI: displays a placeholder profile with a default Steve avatar and offline status indicator (strictly visual; does not represent an authenticated account and cannot launch Minecraft or connect to servers).
+  - Local Guest Profile UI: displays a placeholder profile with a default Steve avatar and offline status indicator (strictly visual; does not represent an authenticated account and cannot launch Minecraft or connect to servers without an authenticated account and a valid license).
 - **Microsoft Authentication & Launch Security:**
-  - Microsoft OAuth 2.0 Device Code Flow client implementation.
+  - Microsoft OAuth 2.0 Device Code Flow client implementation (partially implemented and in development).
   - Integration with Xbox Live and XSTS token exchange routines.
-  - Minecraft Services API integration staged (currently returns HTTP 403; Application ID review status: Not Yet Submitted).
-  - Mandatory pre-launch session and game ownership verification calling `/entitlements/mcstore` and `/minecraft/profile`.
+  - Minecraft Services API integration staged (currently returns HTTP 403; Application ID Review — Submitted (Awaiting Review)). The official Minecraft Services Application ID review form has been submitted. The application is currently awaiting evaluation by Microsoft/Mojang. Approval is not guaranteed.
+  - Mandatory pre-launch session and game ownership verification calling `/entitlements/mcstore` and `/minecraft/profile` implemented in backend (full end-to-end testing pending).
   - Automated session refresh on token expiration prior to launching Minecraft.
   - Windows DPAPI token encryption and structural validation for local accounts (`accounts.json`), safely rejecting corrupt or manipulated profiles.
 - **Windows Bootstrapper & Distribution:**

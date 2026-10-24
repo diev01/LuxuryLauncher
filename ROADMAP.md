@@ -12,7 +12,7 @@ LUXURY Launcher is developed as a non-commercial, custom Minecraft Java Edition 
 | :---: | :--- |
 | 🟢 **Completed** | Feature is implemented and verified in the current build (`4.8.0`). |
 | 🟡 **In Development** | Feature is actively being developed, integrated, or awaiting external review/evaluation. |
-| ⚪ **Not Yet Submitted** | The formal review application has not yet been submitted to Minecraft Services. |
+| ⚪ **Submitted (Awaiting Review)** | The official review application has been submitted to Minecraft Services and is awaiting evaluation. |
 | 🔵 **Planned** | Feature is scheduled for future milestones. |
 
 ---
@@ -23,13 +23,13 @@ LUXURY Launcher is developed as a non-commercial, custom Minecraft Java Edition 
 
 | Feature | Status | Notes |
 | :--- | :---: | :--- |
-| **Local Guest Profile UI** | 🟢 Completed | Displays a local placeholder profile with a default Steve avatar and offline status indicator. This feature does not represent an authenticated Minecraft account and cannot be used to launch the game or connect to multiplayer servers. |
-| **Application ID Review** | ⚪ Not Yet Submitted | Status: **Not Yet Submitted**. The official application form for Minecraft Services review has not yet been submitted; this repository is being prepared to serve as the informational reference for that upcoming submission. |
-| **Microsoft OAuth 2.0 (Device Code Flow)** | 🟡 In Development | Partially implemented; device code request and polling logic implemented, subject to future Application ID submission and review. |
-| **Xbox Live & XSTS Token Flow** | 🟡 In Development | Token acquisition pipeline integrated; pending live verification with Minecraft Services. |
-| **Minecraft Services Integration** | 🟡 In Development | Currently returns HTTP 403 (*Invalid app registration*). Official approval is subject to evaluation and is not guaranteed. |
-| **Minecraft Java Ownership Verification** | 🟡 In Development | License verification logic (`/entitlements/mcstore` and `/minecraft/profile`) implemented in backend and enforced in the pre-launch pipeline; live end-to-end validation remains pending Application ID review. |
-| **Full Authenticated Game Launch** | 🟡 In Development | Pre-launch pipeline enforces token validity, automatic OAuth refresh, and ownership checks. Game launch is blocked until Application ID review approval resolves HTTP 403. |
+| **Local Guest Profile UI** | 🟢 Completed | Displays a local placeholder profile with a default Steve avatar and offline status indicator. Strictly visual; does not allow launching Minecraft or accessing servers without an authenticated account and a valid license. |
+| **Application ID Review** | ⚪ Submitted (Awaiting Review) | Status: **Application ID Review — Submitted (Awaiting Review)**. The official Minecraft Services Application ID review form has been submitted. The application is currently awaiting evaluation by Microsoft/Mojang. Approval is not guaranteed. |
+| **Microsoft OAuth 2.0 (Device Code Flow)** | 🟡 In Development | Partially implemented in code and in active development; complete end-to-end testing remains pending external service authorization. |
+| **Xbox Live & XSTS Token Flow** | 🟡 In Development | Token acquisition routines integrated in backend; complete end-to-end testing with Minecraft Services remains pending. |
+| **Minecraft Services Integration** | 🟡 In Development | Minecraft Services currently returns HTTP 403 Forbidden ('Invalid app registration') when the launcher attempts to authenticate. An Application ID review has been submitted to request authorization. The exact resolution remains subject to Microsoft/Mojang's evaluation. |
+| **Minecraft Java Ownership Verification** | 🟡 In Development | License verification logic (`/entitlements/mcstore` and `/minecraft/profile`) implemented in backend code according to current architecture; full end-to-end testing remains pending. |
+| **Full Authenticated Game Launch** | 🟡 In Development | Pre-launch checks in code require an authenticated Microsoft account and verified ownership; complete testing of authenticated launch remains pending resolution of Minecraft Services authentication. |
 | **Multi-Account Switching** | 🔵 Planned | Safe profile switching between authorized Microsoft accounts. |
 
 ---

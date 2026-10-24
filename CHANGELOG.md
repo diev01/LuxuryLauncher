@@ -20,11 +20,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
   - Launcher settings for JVM memory allocation (minimum/maximum RAM limits) and custom execution arguments.
   - Centralized, structured installation target at `%APPDATA%\Launcheres\Clientes\LuxuryClient\`.
 - **User Interface & Profile Display:**
-  - Local Guest Profile UI: displays a placeholder profile with a default Steve avatar and offline status indicator (does not represent an authenticated Minecraft account).
-- **Microsoft Authentication Pipeline (Staged):**
+  - Local Guest Profile UI: displays a placeholder profile with a default Steve avatar and offline status indicator (strictly visual; does not represent an authenticated account and cannot launch Minecraft or connect to servers).
+- **Microsoft Authentication & Launch Security:**
   - Microsoft OAuth 2.0 Device Code Flow client implementation.
   - Integration with Xbox Live and XSTS token exchange routines.
   - Minecraft Services API integration staged (currently returns HTTP 403; Application ID review status: Not Yet Submitted).
+  - Mandatory pre-launch session and game ownership verification calling `/entitlements/mcstore` and `/minecraft/profile`.
+  - Automated session refresh on token expiration prior to launching Minecraft.
+  - Windows DPAPI token encryption and structural validation for local accounts (`accounts.json`), safely rejecting corrupt or manipulated profiles.
 - **Windows Bootstrapper & Distribution:**
   - Automated desktop installer/bootstrapper utility for Windows 10/11 environments (`luxury-bootstrapper.exe`).
   - Desktop shortcut creation with official crystal feather iconography.

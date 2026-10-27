@@ -10,9 +10,8 @@ LUXURY Launcher is developed as a non-commercial, custom Minecraft Java Edition 
 
 | Status | Meaning |
 | :---: | :--- |
-| 🟢 **Completed** | Feature is implemented and verified in the current build (`4.8.0`). |
-| 🟡 **In Development** | Feature is actively being developed, integrated, or awaiting external review/evaluation. |
-| ⚪ **Submitted (Awaiting Review)** | The official review application has been submitted to Minecraft Services and is awaiting evaluation. |
+| 🟢 **Completed / Tested** | Feature is implemented and verified/tested in the current build (`4.8.0`). |
+| 🟡 **In Development** | Feature is actively being developed, integrated, or undergoing additional testing. |
 | 🔵 **Planned** | Feature is scheduled for future milestones. |
 
 ---
@@ -24,12 +23,13 @@ LUXURY Launcher is developed as a non-commercial, custom Minecraft Java Edition 
 | Feature | Status | Notes |
 | :--- | :---: | :--- |
 | **Local Guest Profile UI** | 🟢 Completed | Displays a local placeholder profile with a default Steve avatar and offline status indicator. Strictly visual; does not allow launching Minecraft or accessing servers without an authenticated account and a valid license. |
-| **Application ID Review** | ⚪ Submitted (Awaiting Review) | Status: **Application ID Review — Submitted (Awaiting Review)**. The official Minecraft Services Application ID review form has been submitted. The application is currently awaiting evaluation by Microsoft/Mojang. Approval is not guaranteed. |
-| **Microsoft OAuth 2.0 (Device Code Flow)** | 🟡 In Development | Partially implemented in code and in active development; complete end-to-end testing remains pending external service authorization. |
-| **Xbox Live & XSTS Token Flow** | 🟡 In Development | Token acquisition routines integrated in backend; complete end-to-end testing with Minecraft Services remains pending. |
-| **Minecraft Services Integration** | 🟡 In Development | Minecraft Services currently returns HTTP 403 Forbidden ('Invalid app registration') when the launcher attempts to authenticate. An Application ID review has been submitted to request authorization. The exact resolution remains subject to Microsoft/Mojang's evaluation. |
-| **Minecraft Java Ownership Verification** | 🟡 In Development | License verification logic (`/entitlements/mcstore` and `/minecraft/profile`) implemented in backend code according to current architecture; full end-to-end testing remains pending. |
-| **Full Authenticated Game Launch** | 🟡 In Development | Pre-launch checks in code require an authenticated Microsoft account and verified ownership; complete testing of authenticated launch remains pending resolution of Minecraft Services authentication. |
+| **Application ID Review** | 🟢 Approved (Allowlisted) | Official approval confirmed on October 26, 2026 (`MCENotify@microsoft.com`). Application ID `ec2fcdee-971e-4ac0-a423-245437027de3` is officially allowlisted by Minecraft Services. |
+| **Microsoft OAuth 2.0 (Device Code Flow)** | 🟢 Successfully Tested | Verified in live end-to-end testing; device code acquisition and polling routines succeed with official Microsoft accounts. |
+| **Xbox Live & XSTS Token Flow** | 🟢 Successfully Tested | Verified in live end-to-end testing; user tokens and XSTS authorization succeed against `rp://api.minecraftservices.com/`. |
+| **Minecraft Services Integration** | 🟢 Successfully Tested | Verified in live end-to-end testing; HTTP 403 was resolved on October 26, 2026 following official approval, successfully returning Minecraft session tokens. |
+| **Minecraft Profile Retrieval** | 🟢 Successfully Tested | Verified in live end-to-end testing; successfully queries `/minecraft/profile` and fetches authentic player UUID and username. |
+| **Minecraft Java Ownership Verification** | 🟡 Implemented (Negative Testing Pending) | License checks (`/entitlements/mcstore` and `/minecraft/profile`) implemented in pre-launch pipeline and verified on licensed accounts; additional negative-case testing for unlicensed accounts pending. |
+| **Full Authenticated Game Launch** | 🟢 Successfully Tested | Verified in live testing; launched Minecraft Java 1.21.11 with Fabric Loader and connected to community multiplayer servers with verified Microsoft session tokens. |
 | **Multi-Account Switching** | 🔵 Planned | Safe profile switching between authorized Microsoft accounts. |
 
 ---

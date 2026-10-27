@@ -21,12 +21,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
   - Centralized, structured installation target at `%APPDATA%\Launcheres\Clientes\LuxuryClient\`.
 - **User Interface & Profile Display:**
   - Local Guest Profile UI: displays a placeholder profile with a default Steve avatar and offline status indicator (strictly visual; does not represent an authenticated account and cannot launch Minecraft or connect to servers without an authenticated account and a valid license).
-- **Microsoft Authentication & Launch Security:**
-  - Microsoft OAuth 2.0 Device Code Flow client implementation (partially implemented and in development).
-  - Integration with Xbox Live and XSTS token exchange routines.
-  - Minecraft Services API integration staged (currently returns HTTP 403; Application ID Review — Submitted (Awaiting Review)). The official Minecraft Services Application ID review form has been submitted. The application is currently awaiting evaluation by Microsoft/Mojang. Approval is not guaranteed.
-  - Mandatory pre-launch session and game ownership verification calling `/entitlements/mcstore` and `/minecraft/profile` implemented in backend (full end-to-end testing pending).
-  - Automated session refresh on token expiration prior to launching Minecraft.
+- **Microsoft Authentication & Minecraft Services:**
+  - Application ID Review: officially approved and allowlisted by Minecraft Services on October 26, 2026 (`MCENotify@microsoft.com`).
+  - Microsoft OAuth 2.0 Device Code Flow, Xbox Live, and XSTS token pipeline successfully tested in live end-to-end authentication.
+  - Minecraft Services authentication (`login_with_xbox`) and official player profile retrieval (`/minecraft/profile`) successfully tested; historical HTTP 403 restriction resolved.
+  - Live game launch of Minecraft Java Edition 1.21.11 with Fabric Loader successfully executed with verified Microsoft session tokens, connecting to multiplayer community servers.
+  - Mandatory pre-launch session and game ownership verification calling `/entitlements/mcstore` and `/minecraft/profile` implemented in backend; additional negative-case testing for unlicensed accounts pending.
+  - Automated session refresh on token expiration implemented and verified in pre-launch sequence.
   - Windows DPAPI token encryption and structural validation for local accounts (`accounts.json`), safely rejecting corrupt or manipulated profiles.
 - **Windows Bootstrapper & Distribution:**
   - Automated desktop installer/bootstrapper utility for Windows 10/11 environments (`luxury-bootstrapper.exe`).
